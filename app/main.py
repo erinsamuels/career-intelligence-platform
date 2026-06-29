@@ -1,26 +1,19 @@
-"""PathForge — AI Career Intelligence Platform.
-
-Application entry point.
-"""
-
+"""PathForge — AI Career Intelligence Platform."""
 
 from app.sample_data import get_sample_person
 from app.services.timeline import format_career_timeline
 
-APP_NAME: str = "PathForge"
-APP_VERSION: str = "0.1.0"
+APP_NAME = "PathForge"
+APP_VERSION = "0.1.0"
 
 
 def main() -> None:
-    """Run the PathForge application."""
-    
-    print("🚨 NEW MAIN.PY IS RUNNING 🚨")
+    """Application entry point."""
 
     person = get_sample_person()
-    timeline = format_career_timeline(person)
 
-    print(timeline)
-    print("")
+    print(format_career_timeline(person))
+    print()
     print(f"Version: {APP_VERSION}")
 
 

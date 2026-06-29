@@ -1,8 +1,4 @@
-"""Sample data for PathForge.
-
-Creates a sample Person with a realistic career history for testing
-and demonstration purposes.
-"""
+"""Sample development data."""
 
 from app.models.company import Company
 from app.models.experience import Experience, ExperienceType
@@ -10,7 +6,6 @@ from app.models.person import Person
 
 
 def get_sample_person() -> Person:
-    """Return a sample Person object for development."""
 
     erin = Person(
         person_id="P001",
@@ -28,7 +23,7 @@ def get_sample_person() -> Person:
         target_company="Rivian",
     )
 
-    virginia_tech = Company(
+    vt = Company(
         company_id="C001",
         name="Virginia Tech",
         industry="Higher Education",
@@ -39,8 +34,8 @@ def get_sample_person() -> Person:
     hevt = Company(
         company_id="C002",
         name="Hybrid Electric Vehicle Team",
-        industry="Student Engineering Organization",
-        size_category="Student Organization",
+        industry="Student Organization",
+        size_category="Student Team",
         headquarters_location="Blacksburg, VA",
     )
 
@@ -53,27 +48,28 @@ def get_sample_person() -> Person:
     )
 
     erin.experiences = [
+
         Experience(
             experience_id="E001",
             person=erin,
-            company=virginia_tech,
+            company=vt,
             raw_title="Mechanical Engineering Student",
             normalized_title="Mechanical Engineering Student",
             experience_type=ExperienceType.EDUCATION,
             start_date="2023-08",
-            location="Blacksburg, VA",
         ),
+
         Experience(
             experience_id="E002",
             person=erin,
             company=hevt,
-            raw_title="Mechanical Team Member",
+            raw_title="HEVT Team Member",
             normalized_title="Engineering Project",
             experience_type=ExperienceType.PROJECT,
             start_date="2023-09",
-            location="Blacksburg, VA",
             skills_used=["CAD", "Manufacturing"],
         ),
+
         Experience(
             experience_id="E003",
             person=erin,
@@ -83,11 +79,10 @@ def get_sample_person() -> Person:
             experience_type=ExperienceType.CO_OP,
             start_date="2026-05",
             end_date="2026-12",
-            location="Richmond, VA",
             skills_used=[
                 "Manufacturing",
-                "Root Cause Analysis",
                 "Python",
+                "Root Cause Analysis",
             ],
         ),
     ]
