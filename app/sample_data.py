@@ -88,3 +88,23 @@ def get_sample_person() -> Person:
     ]
 
     return erin
+
+def get_sample_match() -> Person:
+    """Return a sample career match for comparison."""
+
+    sarah = Person(
+        person_id="P002",
+        full_name="Sarah Chen",
+        professional_summary="Manufacturing engineer in the EV industry.",
+        location="Irvine, CA",
+        skills=[
+            "CAD",
+            "Manufacturing",
+            "DFMEA",
+            "Root Cause Analysis",
+            "Battery Manufacturing",
+        ],
+        target_company="Rivian",
+    )
+
+    return sarah
