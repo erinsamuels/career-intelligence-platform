@@ -1,7 +1,7 @@
 """Career search engine."""
 
 from app.models.person import Person
-from app.services.career_dna import calculate_career_dna
+from app.services.path_score import calculate_career_dna
 
 
 def find_best_match(person: Person, candidates: list[Person]) -> tuple[Person, float]:

@@ -4,8 +4,9 @@ Application entry point.
 """
 
 from app.sample_data import get_sample_match, get_sample_person
-from app.services.career_dna import calculate_career_dna
+from app.services.path_score import calculate_career_dna
 from app.services.timeline import format_career_timeline
+from app.services.data_loader import load_people_from_json
 
 APP_VERSION: str = "0.1.0"
 
@@ -16,6 +17,7 @@ def main() -> None:
     person = get_sample_person()
     match = get_sample_match()
     dna = calculate_career_dna(person, match)
+    candidates = load_people_from_json("data/careers.json")
 
     print(format_career_timeline(person))
     print()
