@@ -3,10 +3,11 @@
 Application entry point.
 """
 
-from app.sample_data import get_sample_match, get_sample_person
-from app.services.path_score import calculate_career_dna
-from app.services.timeline import format_career_timeline
+from app.sample_data import get_sample_person
 from app.services.data_loader import load_people_from_json
+from app.services.path_score import calculate_path_score
+from app.services.search import find_best_match
+from app.services.timeline import format_career_timeline
 
 APP_VERSION: str = "0.1.0"
 
@@ -15,21 +16,33 @@ def main() -> None:
     """Run the PathForge application."""
 
     person = get_sample_person()
-    match = get_sample_match()
-    dna = calculate_career_dna(person, match)
     candidates = load_people_from_json("data/careers.json")
+
+    best_match, _ = find_best_match(person, candidates)
+    path_score = calculate_path_score(person, best_match)
 
     print(format_career_timeline(person))
     print()
-    print(f"Career Match: {match.full_name}")
+    print("Best Career Match")
+    print("-" * 30)
+    print(best_match.full_name)
     print()
-    print("Career DNA")
+    print("Path Score")
     print("-" * 30)
-    print(f"Timeline : {dna.timeline_score}%")
-    print(f"Skills   : {dna.skill_score}%")
-    print(f"Industry : {dna.industry_score}%")
+    print(f"{path_score.score}/100")
+    print(path_score.rating)
+    print()
+    print("Strengths")
     print("-" * 30)
-    print(f"Overall  : {dna.overall_score}%")
+    for strength in path_score.strengths:
+        print(f"✓ {strength}")
+
+    print()
+    print("Improve Score")
+    print("-" * 30)
+    for improvement in path_score.improvements:
+        print(f"+ {improvement}")
+
     print()
     print(f"Version: {APP_VERSION}")
 

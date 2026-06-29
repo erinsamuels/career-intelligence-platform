@@ -1,59 +1,63 @@
-"""Career DNA scoring engine for PathForge."""
+"""Path Score engine for PathForge."""
 
 from dataclasses import dataclass
 
 from app.models.person import Person
-from app.services.similarity import calculate_skill_similarity
+from app.services.career_dna import calculate_career_dna
 
 
 @dataclass
-class CareerDNA:
-    """Represents a person's similarity to another career path."""
+class PathScore:
+    """User-facing career readiness score."""
 
-    timeline_score: float
-    skill_score: float
-    industry_score: float
-    overall_score: float
+    score: float
+    rating: str
+    strengths: list[str]
+    improvements: list[str]
 
 
-def calculate_career_dna(person: Person, match: Person) -> CareerDNA:
-    """Calculate a simple Career DNA score."""
+def calculate_path_score(person: Person, match: Person) -> PathScore:
+    """Calculate an explainable Path Score between a person and a match."""
 
-    # Timeline score
-    timeline_score = (
-        min(len(person.experiences), len(match.experiences))
-        / max(len(person.experiences), len(match.experiences))
-    ) * 100
+    dna = calculate_career_dna(person, match)
 
-    # Skill score
-    skill_score = calculate_skill_similarity(person, match)
+    score = round(dna.overall_score, 1)
 
-    # Industry score
-    person_industries = {
-        exp.company.industry.lower() for exp in person.experiences
-    }
-
-    match_industries = {
-        exp.company.industry.lower() for exp in match.experiences
-    }
-
-    if person_industries == match_industries:
-        industry_score = 100.0
-    elif person_industries & match_industries:
-        industry_score = 75.0
+    if score >= 85:
+        rating = "Excellent trajectory"
+    elif score >= 70:
+        rating = "Strong trajectory"
+    elif score >= 50:
+        rating = "Developing trajectory"
     else:
-        industry_score = 25.0
+        rating = "Early-stage trajectory"
 
-    overall = round(
-        timeline_score * 0.35
-        + skill_score * 0.45
-        + industry_score * 0.20,
-        1,
-    )
+    strengths = []
 
-    return CareerDNA(
-        timeline_score=round(timeline_score, 1),
-        skill_score=skill_score,
-        industry_score=industry_score,
-        overall_score=overall,
+    shared_skills = set(person.skills).intersection(set(match.skills))
+
+    if "Manufacturing" in shared_skills:
+        strengths.append("Manufacturing experience")
+
+    if "CAD" in shared_skills:
+        strengths.append("CAD background")
+
+    if "Python" in shared_skills:
+        strengths.append("Python experience")
+
+    if not strengths:
+        strengths.append("Some overlapping career signals")
+
+    improvements = []
+
+    missing_skills = set(match.skills) - set(person.skills)
+
+    for skill in sorted(missing_skills):
+        improvements.append(f"Build {skill} experience")
+
+    return PathScore(
+        score=score,
+        rating=rating,
+        strengths=strengths,
+        improvements=improvements[:3],
     )
