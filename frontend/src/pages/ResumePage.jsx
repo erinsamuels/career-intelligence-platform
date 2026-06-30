@@ -49,7 +49,7 @@ export function ResumePage({ target }) {
       </section>
 
       {/* Two-column: Keywords + Upgrades */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+      <div className="resumeTwoCols">
 
         {/* Keywords */}
         <section className="panel">

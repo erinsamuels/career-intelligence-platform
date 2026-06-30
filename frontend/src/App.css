@@ -227,6 +227,7 @@ body {
   flex-direction: column;
   gap: 16px;
   min-width: 0;
+  padding-bottom: 32px;
 }
 
 /* ============================================================
@@ -1188,6 +1189,18 @@ body {
 }
 
 /* ============================================================
+   RESUME TWO-COL GRID
+   ============================================================ */
+.resumeTwoCols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 820px) {
+  .resumeTwoCols { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    PAGES — CAREER MAP
    ============================================================ */
 .careerMapPage {
@@ -1485,9 +1498,11 @@ body {
 @media (max-width: 1100px) {
   .app {
     grid-template-columns: 1fr;
+    padding: 12px 0;
+    gap: 12px;
   }
   .sidebar {
-    display: none; /* show via mobile nav later */
+    display: none;
   }
   .dashGrid {
     grid-template-columns: 1fr;
@@ -1499,12 +1514,22 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
   .companyGrid, .connectionGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .companiesHeroGrid, .networkStat {
     grid-template-columns: repeat(2, 1fr);
   }
   .snapshotGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 820px) {
+  .companyGrid, .connectionGrid {
+    grid-template-columns: 1fr;
+  }
+  /* Resume two-col → one-col */
+  .resumeKeywordRow {
     grid-template-columns: 1fr;
   }
 }
