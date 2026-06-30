@@ -1,26 +1,39 @@
+import { MapPin, Target, Briefcase } from "lucide-react";
+
 export function ProfileSnapshot({ target }) {
   return (
-    <section className="panel profileSnapshot">
+    <section className="panel">
       <div className="panelHeader">
-        <div>
-          <p className="eyebrow">Profile snapshot</p>
+        <div className="panelHeaderLeft">
+          <p className="eyebrow">Profile</p>
           <h2>Current story</h2>
         </div>
       </div>
 
       <div className="snapshotGrid">
-        <article>
-          <span>Current role</span>
-          <strong>{target.current}</strong>
-        </article>
-        <article>
-          <span>Target company</span>
-          <strong>{target.company}</strong>
-        </article>
-        <article>
-          <span>Target function</span>
-          <strong>{target.role}</strong>
-        </article>
+        <div className="snapshotCard wide">
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+            <Briefcase size={13} style={{ color: "var(--sage-lt)" }} />
+            <div className="snapshotLabel">Current position</div>
+          </div>
+          <div className="snapshotVal">{target.current}</div>
+        </div>
+
+        <div className="snapshotCard">
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+            <Target size={13} style={{ color: "var(--gold)" }} />
+            <div className="snapshotLabel">Target company</div>
+          </div>
+          <div className="snapshotVal">{target.targetCompany}</div>
+        </div>
+
+        <div className="snapshotCard">
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+            <MapPin size={13} style={{ color: "var(--sage-lt)" }} />
+            <div className="snapshotLabel">Target function</div>
+          </div>
+          <div className="snapshotVal">{target.role}</div>
+        </div>
       </div>
     </section>
   );

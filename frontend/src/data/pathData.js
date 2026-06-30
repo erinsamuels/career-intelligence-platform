@@ -6,6 +6,9 @@ export const targets = [
     role: "Mechanical Engineer",
     score: 74,
     current: "DuPont Tyvek Co-op",
+    currentRole: "ME Student",
+    targetCompany: "Rivian",
+    targetFunction: "Mechanical Engineering",
     summary:
       "Strong route: DuPont manufacturing plus HEVT vehicle experience can become a credible EV story.",
     nodes: [
@@ -15,6 +18,7 @@ export const targets = [
         title: "ME Student",
         type: "current",
         match: 62,
+        timeframe: "Now",
         detail:
           "Your foundation is mechanical engineering coursework, HEVT, and early manufacturing exposure.",
         skills: ["Mechanical fundamentals", "HEVT", "Career clarity"],
@@ -27,6 +31,7 @@ export const targets = [
         title: "Tyvek Co-op",
         type: "active",
         match: 72,
+        timeframe: "Active now",
         detail:
           "Your plant experience is valuable. The win is translating it into measurable engineering impact.",
         skills: ["Manufacturing", "Root cause analysis", "Process improvement"],
@@ -39,6 +44,7 @@ export const targets = [
         title: "EV / Battery Internship",
         type: "bridge",
         match: 80,
+        timeframe: "~6 months",
         detail:
           "A bridge role connects your manufacturing background to batteries, vehicles, or validation.",
         skills: ["Battery basics", "Automotive manufacturing", "Testing"],
@@ -52,6 +58,7 @@ export const targets = [
         title: "Mechanical Engineer",
         type: "goal",
         match: 88,
+        timeframe: "Goal",
         detail:
           "Best positioning: manufacturing credibility plus hands-on vehicle project experience.",
         skills: ["Vehicle systems", "Design validation", "Cross-functional work"],
@@ -61,10 +68,10 @@ export const targets = [
     ],
     metrics: [
       { label: "Experience", value: 72 },
-      { label: "Projects", value: 81 },
-      { label: "Skills", value: 64 },
-      { label: "Network", value: 58 },
-      { label: "Resume", value: 70 },
+      { label: "Projects",   value: 81 },
+      { label: "Skills",     value: 64 },
+      { label: "Network",    value: 58 },
+      { label: "Resume",     value: 70 },
     ],
     nextMoves: [
       "Add one EV-specific project to your portfolio.",
@@ -79,6 +86,12 @@ export const targets = [
         "vehicle systems",
         "root cause analysis",
         "manufacturing launch",
+      ],
+      presentKeywords: [
+        "manufacturing",
+        "process improvement",
+        "HEVT",
+        "mechanical engineering",
       ],
       bulletUpgrades: [
         {
@@ -101,6 +114,7 @@ export const targets = [
           "Mechanical Engineer, Manufacturing Engineer, Validation Engineer",
         introAngle:
           "VT alumni, HEVT connection, EV passion, manufacturing experience.",
+        matchScore: 88,
       },
       {
         name: "Tesla",
@@ -109,15 +123,44 @@ export const targets = [
           "Manufacturing Engineer, Process Engineer, Production Engineering Intern",
         introAngle:
           "DuPont plant experience and measurable process improvement.",
+        matchScore: 79,
       },
       {
         name: "Lucid",
         fit: "Good fit for vehicle systems, validation, and premium EV engineering.",
         roleType: "Vehicle Systems, Test Engineer, Mechanical Design Intern",
         introAngle: "HEVT vehicle experience and systems-focused project work.",
+        matchScore: 74,
+      },
+    ],
+    connections: [
+      {
+        type: "Rivian VT Alum",
+        reason:
+          "Best warm path because shared school context makes outreach more natural.",
+        search: "Virginia Tech Rivian mechanical engineer LinkedIn",
+        message:
+          "Mention HEVT, DuPont manufacturing, and that you are exploring EV mechanical paths.",
+      },
+      {
+        type: "Manufacturing-to-EV",
+        reason:
+          "Shows how someone translated plant experience into an EV company.",
+        search: "DuPont Tesla Rivian manufacturing engineer LinkedIn",
+        message:
+          "Ask how they framed manufacturing experience when moving into automotive or EV.",
+      },
+      {
+        type: "HEVT Project Engineer",
+        reason:
+          "Helps you understand which student vehicle projects matter most to EV recruiters.",
+        search: "Rivian vehicle systems engineer Formula SAE HEVT LinkedIn",
+        message:
+          "Ask what project evidence made their profile stronger for vehicle engineering roles.",
       },
     ],
   },
+
   {
     id: "tesla",
     company: "Tesla",
@@ -125,6 +168,9 @@ export const targets = [
     role: "Manufacturing Engineer",
     score: 78,
     current: "DuPont Manufacturing Co-op",
+    currentRole: "ME Student",
+    targetCompany: "Tesla",
+    targetFunction: "Manufacturing Engineering",
     summary:
       "Very natural fit: DuPont manufacturing experience maps directly to production engineering.",
     nodes: [
@@ -134,6 +180,7 @@ export const targets = [
         title: "ME Student",
         type: "current",
         match: 66,
+        timeframe: "Now",
         detail:
           "Your engineering background gives you a base for equipment, process, and production roles.",
         skills: ["Problem solving", "Mechanical systems", "Manufacturing interest"],
@@ -146,6 +193,7 @@ export const targets = [
         title: "Manufacturing Co-op",
         type: "active",
         match: 78,
+        timeframe: "Active now",
         detail:
           "This is directly relevant. Tesla-style roles care about speed, ownership, and measurable impact.",
         skills: ["Troubleshooting", "Equipment reliability", "Lean thinking"],
@@ -158,6 +206,7 @@ export const targets = [
         title: "Auto Supplier Internship",
         type: "bridge",
         match: 84,
+        timeframe: "~6 months",
         detail:
           "An automotive supplier or battery plant creates a direct transition into vehicle manufacturing.",
         skills: ["Quality", "DFM", "Production systems"],
@@ -171,6 +220,7 @@ export const targets = [
         title: "Manufacturing Engineer",
         type: "goal",
         match: 89,
+        timeframe: "Goal",
         detail:
           "Your story should emphasize urgency, ownership, production metrics, and problem solving.",
         skills: ["High-volume production", "Automation", "Rapid execution"],
@@ -181,10 +231,10 @@ export const targets = [
     ],
     metrics: [
       { label: "Experience", value: 82 },
-      { label: "Projects", value: 70 },
-      { label: "Skills", value: 68 },
-      { label: "Network", value: 52 },
-      { label: "Resume", value: 73 },
+      { label: "Projects",   value: 70 },
+      { label: "Skills",     value: 68 },
+      { label: "Network",    value: 52 },
+      { label: "Resume",     value: 73 },
     ],
     nextMoves: [
       "Quantify one manufacturing improvement.",
@@ -199,6 +249,12 @@ export const targets = [
         "downtime",
         "yield",
         "equipment reliability",
+      ],
+      presentKeywords: [
+        "manufacturing",
+        "process improvement",
+        "mechanical engineering",
+        "co-op",
       ],
       bulletUpgrades: [
         {
@@ -220,6 +276,7 @@ export const targets = [
         roleType: "Manufacturing Engineer, Equipment Engineer, Process Engineer",
         introAngle:
           "Manufacturing co-op experience with throughput, downtime, or reliability impact.",
+        matchScore: 89,
       },
       {
         name: "Panasonic Energy",
@@ -228,15 +285,44 @@ export const targets = [
           "Battery Manufacturing, Process Engineering, Quality Engineering",
         introAngle:
           "DuPont process exposure and interest in EV battery production.",
+        matchScore: 81,
       },
       {
         name: "General Motors",
         fit: "Strong automotive manufacturing stepping stone with many plant roles.",
         roleType: "Manufacturing Engineer, Launch Engineer, Quality Engineer",
         introAngle: "Mechanical engineering plus manufacturing systems experience.",
+        matchScore: 76,
+      },
+    ],
+    connections: [
+      {
+        type: "Tesla Mfg Engineer",
+        reason:
+          "Most direct source for understanding what production engineering stories matter.",
+        search: "Tesla manufacturing engineer mechanical engineering LinkedIn",
+        message:
+          "Ask what measurable manufacturing experience stands out for Tesla production roles.",
+      },
+      {
+        type: "Auto Supplier Alum",
+        reason:
+          "Supplier experience can be a realistic bridge into Tesla manufacturing.",
+        search: "automotive supplier Tesla manufacturing engineer LinkedIn",
+        message:
+          "Ask how supplier or plant experience helped them move into Tesla.",
+      },
+      {
+        type: "Battery Mfg Contact",
+        reason:
+          "Battery manufacturing is a strong adjacent route into Tesla and EV production.",
+        search: "Panasonic Tesla battery manufacturing engineer LinkedIn",
+        message:
+          "Ask which process or equipment skills are most useful in battery production roles.",
       },
     ],
   },
+
   {
     id: "battery",
     company: "Energy",
@@ -244,6 +330,9 @@ export const targets = [
     role: "Process Engineer",
     score: 76,
     current: "DuPont Process / Manufacturing Co-op",
+    currentRole: "ME Student",
+    targetCompany: "Panasonic Energy / QuantumScape",
+    targetFunction: "Process Engineering",
     summary:
       "Clean bridge: process engineering and manufacturing experience translate well to battery production.",
     nodes: [
@@ -253,6 +342,7 @@ export const targets = [
         title: "ME Student",
         type: "current",
         match: 65,
+        timeframe: "Now",
         detail:
           "Mechanical engineering supports process, equipment, and manufacturing roles in energy.",
         skills: ["Engineering fundamentals", "Data thinking", "Process curiosity"],
@@ -265,23 +355,21 @@ export const targets = [
         title: "Process Co-op",
         type: "active",
         match: 79,
+        timeframe: "Active now",
         detail:
           "Process variables, quality, and production problem-solving are directly useful in battery plants.",
         skills: ["Process variables", "Root cause analysis", "Manufacturing data"],
         action:
           "Explain one process variable you worked with and how it affected output.",
-        exits: [
-          "Battery process",
-          "Quality engineering",
-          "Manufacturing engineering",
-        ],
+        exits: ["Battery process", "Quality engineering", "Manufacturing engineering"],
       },
       {
         id: "battery-plant",
         label: "Battery",
-        title: "Battery Manufacturing Internship",
+        title: "Battery Mfg Internship",
         type: "bridge",
         match: 86,
+        timeframe: "~6 months",
         detail:
           "Battery production values yield, safety, process discipline, and equipment understanding.",
         skills: ["Battery fundamentals", "Quality control", "Yield improvement"],
@@ -295,6 +383,7 @@ export const targets = [
         title: "Battery Process Engineer",
         type: "goal",
         match: 90,
+        timeframe: "Goal",
         detail:
           "This path combines manufacturing credibility with clean energy and EV relevance.",
         skills: ["SPC", "DOE mindset", "Scale-up"],
@@ -305,10 +394,10 @@ export const targets = [
     ],
     metrics: [
       { label: "Experience", value: 84 },
-      { label: "Projects", value: 67 },
-      { label: "Skills", value: 72 },
-      { label: "Network", value: 50 },
-      { label: "Resume", value: 75 },
+      { label: "Projects",   value: 67 },
+      { label: "Skills",     value: 72 },
+      { label: "Network",    value: 50 },
+      { label: "Resume",     value: 75 },
     ],
     nextMoves: [
       "Learn battery manufacturing vocabulary.",
@@ -323,6 +412,12 @@ export const targets = [
         "process control",
         "quality systems",
         "battery manufacturing",
+      ],
+      presentKeywords: [
+        "process engineering",
+        "manufacturing",
+        "root cause analysis",
+        "mechanical engineering",
       ],
       bulletUpgrades: [
         {
@@ -339,12 +434,13 @@ export const targets = [
     },
     companies: [
       {
-        name: "Panasonic Energy",
+        name: "Panasonic",
         fit: "Strong battery manufacturing target for process and quality roles.",
         roleType:
           "Process Engineer, Battery Manufacturing Engineer, Quality Engineer",
         introAngle:
           "DuPont manufacturing background and battery process interest.",
+        matchScore: 86,
       },
       {
         name: "Tesla",
@@ -352,6 +448,7 @@ export const targets = [
         roleType:
           "Battery Process Engineer, Manufacturing Engineer, Equipment Engineer",
         introAngle: "Process improvement and interest in EV battery production.",
+        matchScore: 82,
       },
       {
         name: "QuantumScape",
@@ -359,6 +456,33 @@ export const targets = [
         roleType: "Process Engineer, Manufacturing Development Engineer",
         introAngle:
           "Materials/process curiosity plus mechanical engineering foundation.",
+        matchScore: 71,
+      },
+    ],
+    connections: [
+      {
+        type: "Battery Process Eng",
+        reason:
+          "Closest match for learning how process experience translates into battery production.",
+        search: "battery process engineer mechanical engineering LinkedIn",
+        message:
+          "Ask which manufacturing and process skills mattered most for entering battery roles.",
+      },
+      {
+        type: "Panasonic Contact",
+        reason:
+          "Strong practical view into battery manufacturing and production engineering.",
+        search: "Panasonic Energy process engineer LinkedIn",
+        message:
+          "Ask how to prepare for process, quality, or manufacturing roles in battery plants.",
+      },
+      {
+        type: "Clean Energy VT Alum",
+        reason:
+          "Shared school background makes the conversation easier to start.",
+        search: "Virginia Tech battery engineer energy storage LinkedIn",
+        message:
+          "Mention your DuPont process exposure and ask what skills helped them enter energy storage.",
       },
     ],
   },
@@ -367,26 +491,26 @@ export const targets = [
 export const simulatorMoves = [
   {
     id: "ev-project",
-    title: "EV Project",
+    title: "EV Side Project",
     impact: 6,
-    detail: "Adds vehicle-specific proof to your profile.",
+    detail: "Adds vehicle-specific proof to your profile and shows genuine interest.",
   },
   {
     id: "battery-skill",
-    title: "Battery Skill",
+    title: "Battery Certification",
     impact: 5,
-    detail: "Improves EV and energy alignment.",
+    detail: "Improves EV and energy alignment with recognized credentials.",
   },
   {
     id: "referral",
     title: "Alumni Referral",
     impact: 4,
-    detail: "Creates warmer access to companies.",
+    detail: "Creates warmer access to target companies through shared connections.",
   },
   {
     id: "auto-internship",
     title: "Auto Internship",
     impact: 7,
-    detail: "Adds direct industry credibility.",
+    detail: "Adds direct industry credibility with hands-on vehicle experience.",
   },
 ];

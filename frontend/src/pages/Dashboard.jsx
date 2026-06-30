@@ -1,5 +1,6 @@
 import { CareerGraph } from "../components/CareerGraph";
 import { CompanyTargets } from "../components/CompanyTargets";
+import { ConnectionTargets } from "../components/ConnectionTargets";
 import { NextActions } from "../components/NextActions";
 import { NodeDetails } from "../components/NodeDetails";
 import { PathScore } from "../components/PathScore";
@@ -22,11 +23,17 @@ export function Dashboard({
 }) {
   return (
     <div className="dashboard">
-      <section className="heroCompact panel">
-        <div>
+
+      {/* Hero */}
+      <section className="panel dashHero">
+        <div className="dashHeroContent">
           <p className="eyebrow">Target path</p>
-          <h2>{target.title}</h2>
-          <p>{target.summary}</p>
+          <h2 className="dashHeroTitle">
+            Your path to{" "}
+            <em>{target.role}</em>{" "}
+            at {target.company}
+          </h2>
+          <p className="dashHeroSummary">{target.summary}</p>
         </div>
 
         <TargetSelector
@@ -36,7 +43,8 @@ export function Dashboard({
         />
       </section>
 
-      <section className="dashboardGrid">
+      {/* Primary grid: graph (wide) + score (narrow) */}
+      <div className="dashGrid">
         <CareerGraph
           activeNodeId={activeNodeId}
           nodes={target.nodes}
@@ -51,16 +59,24 @@ export function Dashboard({
 
         <NodeDetails node={activeNode} />
 
-        <ResumeGap gap={target.resumeGap} />
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <NextActions moves={target.nextMoves} />
+          <ProfileSnapshot target={target} />
+        </div>
+      </div>
 
-        <CompanyTargets companies={target.companies} />
+      {/* Resume gap — full width */}
+      <ResumeGap gap={target.resumeGap} />
 
-        <NextActions moves={target.nextMoves} />
+      {/* Companies */}
+      <CompanyTargets companies={target.companies} />
 
-        <ProfileSnapshot target={target} />
+      {/* Connections */}
+      <ConnectionTargets connections={target.connections} />
 
-        <Simulator selectedMoves={selectedMoves} onToggleMove={onToggleMove} />
-      </section>
+      {/* Simulator — full width */}
+      <Simulator selectedMoves={selectedMoves} onToggleMove={onToggleMove} />
+
     </div>
   );
 }

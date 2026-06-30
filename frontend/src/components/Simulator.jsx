@@ -1,14 +1,18 @@
 import { simulatorMoves } from "../data/pathData";
+import { Check, TrendingUp } from "lucide-react";
 
 export function Simulator({ selectedMoves, onToggleMove }) {
   return (
-    <section className="panel simulator">
+    <section className="panel">
       <div className="panelHeader">
-        <div>
+        <div className="panelHeaderLeft">
           <p className="eyebrow">Simulator</p>
           <h2>Test a career move</h2>
         </div>
-        <span>Updates score</span>
+        <div className="panelBadge">
+          <TrendingUp size={11} />
+          Updates path score
+        </div>
       </div>
 
       <div className="simGrid">
@@ -17,16 +21,24 @@ export function Simulator({ selectedMoves, onToggleMove }) {
 
           return (
             <button
-              className={selected ? "simCard active" : "simCard"}
+              className={`simCard ${selected ? "active" : ""}`}
               key={move.id}
               onClick={() => onToggleMove(move.id)}
               type="button"
             >
-              <div>
-                <strong>{move.title}</strong>
-                <p>{move.detail}</p>
+              <div className="simCheckmark">
+                <Check size={12} />
               </div>
-              <span>+{move.impact}</span>
+
+              <div>
+                <div className="simCardTitle">{move.title}</div>
+                <p className="simCardDesc">{move.detail}</p>
+              </div>
+
+              <div className="simCardImpact">
+                <TrendingUp size={13} />
+                +{move.impact} score
+              </div>
             </button>
           );
         })}

@@ -1,47 +1,49 @@
 export function NodeDetails({ node }) {
   return (
-    <section className="panel nodeDetails">
+    <section className="panel nodeDetailsPanel">
       <div className="panelHeader">
-        <div>
-          <p className="eyebrow">Selected node</p>
+        <div className="panelHeaderLeft">
+          <p className="eyebrow">Selected step</p>
           <h2>{node.label}</h2>
         </div>
-        <span>{node.type}</span>
+        <div className={`panelBadge ${node.type === "goal" ? "panelBadge-gold" : ""}`}>
+          {node.type}
+        </div>
       </div>
 
-      <div className="nodeHero">
+      <div className="nodeHeroRow">
         <div>
-          <h3>{node.title}</h3>
-          <p>{node.detail}</p>
+          <div className="nodeTitle">{node.title}</div>
+          <p className="nodeDesc">{node.detail}</p>
         </div>
 
-        <div className="nodeMatch">
-          <strong>{node.match}%</strong>
-          <span>step fit</span>
+        <div className="nodeMatchBox">
+          <div className="nodeMatchNum">{node.match}%</div>
+          <div className="nodeMatchSub">step fit</div>
         </div>
       </div>
 
-      <div className="detailBlock">
-        <strong>Skills gained</strong>
+      <div className="detailSection">
+        <div className="detailSectionTitle">Skills gained</div>
         <div className="pillRow">
           {node.skills.map((skill) => (
-            <span key={skill}>{skill}</span>
+            <span className="pill" key={skill}>{skill}</span>
           ))}
         </div>
       </div>
 
-      <div className="detailBlock">
-        <strong>Common exits</strong>
-        <div className="exitList">
+      <div className="detailSection">
+        <div className="detailSectionTitle">Common exits</div>
+        <div className="pillRow">
           {node.exits.map((exit) => (
-            <span key={exit}>{exit}</span>
+            <span className="pill pillMuted" key={exit}>{exit}</span>
           ))}
         </div>
       </div>
 
-      <div className="actionBox">
-        <strong>Next action</strong>
-        <p>{node.action}</p>
+      <div className="nodeAction">
+        <div className="nodeActionLabel">Next action</div>
+        <p className="nodeActionText">{node.action}</p>
       </div>
     </section>
   );

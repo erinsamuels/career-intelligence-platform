@@ -1,10 +1,11 @@
 export function TargetSelector({ onChangeTarget, target, targets }) {
   return (
-    <label className="targetSelector">
-      <span>Target role</span>
+    <div className="targetSelector">
+      <div className="targetSelectorLabel">Choose target path</div>
       <select
+        className="targetSelectorSelect"
         value={target.id}
-        onChange={(event) => onChangeTarget(event.target.value)}
+        onChange={(e) => onChangeTarget(e.target.value)}
       >
         {targets.map((item) => (
           <option key={item.id} value={item.id}>
@@ -12,6 +13,6 @@ export function TargetSelector({ onChangeTarget, target, targets }) {
           </option>
         ))}
       </select>
-    </label>
+    </div>
   );
 }
