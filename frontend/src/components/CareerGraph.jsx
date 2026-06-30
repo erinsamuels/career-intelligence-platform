@@ -97,8 +97,8 @@ export function CareerGraph({ activeNodeId, nodes, onSelectNode, target }) {
       >
         <defs>
           <linearGradient id="elevGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"   stopColor="rgba(117,163,123,0.1)" />
-            <stop offset="100%" stopColor="rgba(117,163,123,0)"   />
+            <stop offset="0%"   stopColor="rgba(58,112,72,0.14)" />
+            <stop offset="100%" stopColor="rgba(58,112,72,0)"    />
           </linearGradient>
           <linearGradient id="pathGrad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%"   stopColor="var(--sage)" stopOpacity="0.55" />
@@ -115,7 +115,7 @@ export function CareerGraph({ activeNodeId, nodes, onSelectNode, target }) {
             key={`glow-${i}`}
             d={curvePath(pos, positions[i + 1])}
             fill="none"
-            stroke="rgba(247,216,157,0.08)"
+            stroke="rgba(201,138,28,0.10)"
             strokeWidth="9"
             strokeLinecap="round"
             style={{ filter: "blur(5px)" }}
@@ -127,7 +127,7 @@ export function CareerGraph({ activeNodeId, nodes, onSelectNode, target }) {
           <path
             d={curvePath(positions[1], positions[3])}
             fill="none"
-            stroke="rgba(117,163,123,0.3)"
+            stroke="rgba(58,112,72,0.35)"
             strokeWidth="1"
             strokeDasharray="3 3"
             strokeLinecap="round"
@@ -152,7 +152,7 @@ export function CareerGraph({ activeNodeId, nodes, onSelectNode, target }) {
           <line
             key={y}
             x1="0" y1={y} x2="100" y2={y}
-            stroke="rgba(255,255,255,0.025)"
+            stroke="rgba(20,42,26,0.04)"
             strokeWidth="0.5"
           />
         ))}

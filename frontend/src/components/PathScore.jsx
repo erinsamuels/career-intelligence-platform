@@ -79,8 +79,8 @@ export function PathScore({ activeMoves, pathScore, target }) {
           >
             <defs>
               <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%"   stopColor="#75A37B" />
-                <stop offset="100%" stopColor="#F7D89D" />
+                <stop offset="0%"   stopColor="#3A7048" />
+                <stop offset="100%" stopColor="#C98A1C" />
               </linearGradient>
             </defs>
 
@@ -88,7 +88,7 @@ export function PathScore({ activeMoves, pathScore, target }) {
             <circle
               cx="64" cy="64" r={RADIUS}
               fill="none"
-              stroke="rgba(255,255,255,0.07)"
+              stroke="rgba(20,42,26,0.12)"
               strokeWidth="9"
             />
 
@@ -102,7 +102,7 @@ export function PathScore({ activeMoves, pathScore, target }) {
               strokeDasharray={CIRC}
               strokeDashoffset={animOffset}
               style={{
-                filter: "drop-shadow(0 0 8px rgba(247,216,157,0.45))",
+                filter: "drop-shadow(0 0 8px rgba(201,138,28,0.40))",
                 transition: "none",
               }}
             />
@@ -112,7 +112,7 @@ export function PathScore({ activeMoves, pathScore, target }) {
               <circle
                 cx="64" cy="64" r={RADIUS}
                 fill="none"
-                stroke="rgba(184,214,172,0.22)"
+                stroke="rgba(58,112,72,0.25)"
                 strokeWidth="9"
                 strokeLinecap="round"
                 strokeDasharray={CIRC}
