@@ -18,7 +18,7 @@ export function AppLayout({ children, page, onNavigate, target, pathScore }) {
       <main className="app">
         <Sidebar page={page} onNavigate={onNavigate} target={target} pathScore={pathScore} />
         <section className="workspace">
-          <Header page={page} onNavigate={onNavigate} target={target} />
+          <Header page={page} onNavigate={onNavigate} target={target} pathScore={pathScore} />
           {children}
         </section>
       </main>

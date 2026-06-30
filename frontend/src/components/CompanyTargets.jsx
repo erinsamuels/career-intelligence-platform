@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { Bookmark, ArrowUpRight } from "lucide-react";
 
+function jobsUrl(company) {
+  const q = encodeURIComponent(`${company.name} ${company.roleType}`);
+  return `https://www.linkedin.com/jobs/search/?keywords=${q}&location=United%20States`;
+}
+
 export function CompanyTargets({ companies }) {
   const [bookmarked, setBookmarked] = useState(new Set());
 
@@ -68,10 +73,15 @@ export function CompanyTargets({ companies }) {
               </div>
 
               <div className="companyActions">
-                <button className="companyActionsBtn">
+                <a
+                  className="companyActionsBtn"
+                  href={jobsUrl(company)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <ArrowUpRight size={13} />
                   View roles
-                </button>
+                </a>
                 <button
                   className={`companyActionsBtn ${saved ? "bookmarked" : ""}`}
                   onClick={() => toggleBookmark(company.name)}

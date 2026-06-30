@@ -13,33 +13,38 @@
   font-synthesis: none;
 
   /* ── Colors ── */
-  --bg:            #07100c;
-  --bg-alt:        #0d1912;
+  /* Forest floor at dusk — rich dark green, not black */
+  --bg:            #121E15;
+  --bg-alt:        #182818;
 
-  --s0: rgba(255,255,255,0.025);
-  --s1: rgba(255,255,255,0.05);
-  --s2: rgba(255,255,255,0.075);
-  --s3: rgba(255,255,255,0.11);
+  /* Warm stone surface tints — panels feel like paper/stone, not glass */
+  --s0: rgba(228,216,192,0.03);
+  --s1: rgba(228,216,192,0.065);
+  --s2: rgba(228,216,192,0.10);
+  --s3: rgba(228,216,192,0.155);
 
-  --border:        rgba(255,255,255,0.08);
-  --border-md:     rgba(255,255,255,0.12);
-  --border-gold:   rgba(247,216,157,0.22);
-  --border-sage:   rgba(117,163,123,0.24);
+  --border:        rgba(228,216,192,0.10);
+  --border-md:     rgba(228,216,192,0.17);
+  --border-gold:   rgba(245,198,72,0.30);
+  --border-sage:   rgba(122,190,138,0.32);
 
-  --text:          #F8F3E7;
-  --text-2:        rgba(248,243,231,0.68);
-  --text-3:        rgba(248,243,231,0.44);
-  --text-inv:      #101a0e;
+  /* Warm cream text — paper-like, not stark white */
+  --text:          #EEE8D2;
+  --text-2:        rgba(238,232,210,0.68);
+  --text-3:        rgba(238,232,210,0.44);
+  --text-inv:      #0d1a0f;
 
-  --gold:          #F7D89D;
-  --gold-dk:       #C38643;
-  --gold-glow:     rgba(247,216,157,0.14);
-  --gold-ring:     rgba(247,216,157,0.08);
+  /* Sunlight gold — brighter and more vivid */
+  --gold:          #F5C842;
+  --gold-dk:       #C2891F;
+  --gold-glow:     rgba(245,200,66,0.16);
+  --gold-ring:     rgba(245,200,66,0.10);
 
-  --sage:          #75A37B;
-  --sage-lt:       #B8D6AC;
-  --sage-dk:       #3D6E45;
-  --sage-glow:     rgba(117,163,123,0.14);
+  /* Sage — lighter, fresher, more vibrant */
+  --sage:          #7ABF88;
+  --sage-lt:       #A9D8B7;
+  --sage-dk:       #3D6C48;
+  --sage-glow:     rgba(122,191,136,0.16);
 
   --green:         #4ADE80;
   --amber:         #FBBF24;
