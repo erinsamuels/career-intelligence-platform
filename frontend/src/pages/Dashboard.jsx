@@ -1,6 +1,7 @@
 import { CareerGraph } from "../components/CareerGraph";
 import { CompanyTargets } from "../components/CompanyTargets";
 import { ConnectionTargets } from "../components/ConnectionTargets";
+import { InsightPanel } from "../components/InsightPanel";
 import { NextActions } from "../components/NextActions";
 import { NodeDetails } from "../components/NodeDetails";
 import { PathDNA } from "../components/PathDNA";
@@ -92,6 +93,9 @@ export function Dashboard({
           <PathDNA target={target} />
         </div>
       </div>
+
+      {/* Insights — full width */}
+      <InsightPanel target={target} activeNode={activeNode} pathScore={pathScore} />
 
       {/* Resume gap — full width */}
       <ResumeGap gap={target.resumeGap} />
